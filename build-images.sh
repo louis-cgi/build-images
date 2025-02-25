@@ -1,8 +1,4 @@
 #!/bin/zsh -
-reset-git() {
-  git reset --hard && git clean -dxf
-}
-
 ls-images() {
   echo "\n### Listing Docker Images"
   docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}"
@@ -31,7 +27,6 @@ ls-images
 title "Building Java Spring Boot Container with JDK"
 cd ..
 cd multiply-matrix
-reset-git
 git checkout main
 ./build.sh
 ls-images
@@ -50,7 +45,6 @@ ls-images
 #
 title "Building Rust Compressed"
 cd ../multiply-rust
-reset-git
 clear
 git checkout main
 ./build.sh
