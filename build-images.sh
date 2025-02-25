@@ -3,15 +3,10 @@ reset-git() {
   git reset --hard && git clean -dxf
 }
 
-wait-enter() {
-  echo "\nPress any key to continue..."
-  read -s -n 1
-}
-
 ls-images() {
   echo "\n### Listing Docker Images"
   docker image ls --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}"
-  wait-enter
+  sleep 3
 }
 
 title() {
