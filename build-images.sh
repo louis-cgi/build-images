@@ -59,5 +59,6 @@ reset-git
 clear
 git checkout main
 ./build.sh
+clear
 ls-images
 
